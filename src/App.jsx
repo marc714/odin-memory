@@ -36,9 +36,8 @@ function App() {
     setHighScore(0)
   }
 
-  function checkWinCondition() {
-    if(score == 4) {
-      // 4 because of lag with state
+  function checkWinCondition(tempScore) {
+    if(tempScore == 5) {
       console.log("you win")
       setGameStatus("win")
     }
@@ -160,7 +159,8 @@ function App() {
       }
       console.log("tempScore: " + tempScore)
       console.log("score is: " + score) // i think on this render, still uses old state
-      checkWinCondition() // see if 'score' == 5
+      // https://react.dev/learn/queueing-a-series-of-state-updates
+      checkWinCondition(tempScore) // since in this render 'score' == 5
       flipAllCards();
       let tempArr = [...gameArray]
       shuffle(tempArr)
