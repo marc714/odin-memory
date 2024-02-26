@@ -33,10 +33,127 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
+} */
+
+
+/* Memory Game */
+.container {
+  background-image: url("/public/boardgame.jpg");
+  background-size: cover;
+  background-position: center center;
+  min-height: 600px;
+  min-width: 800px;
 }
 
-.read-the-docs {
-  color: #888;
+.gameboard {
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px;  
+}
+
+.welcome img {
+  min-height: 600px;
+  min-width: 800px;
+  
+  max-height: 600px;
+  max-width: 800px;
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: #000000; 
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 50px; 
+  text-align: center;
+}
+
+.gamecard-container {
+  display: flex;
+  gap: 50px;
+}
+
+.gamecard {
+  /* background-image: url("/pokemon-back.png");   */
+  /* you can remove /public/ */
+  background-image: url("/pokemon-back.png");
+  height: 150px;
+  width: 108px;
+  background-size: cover;
+  background-position: center center; 
+  position: relative;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* https://coder-coder.com/background-image-opacity/ */
+.gamecard::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.76);
+
+   
+  /* background-image: url("/pokemon-back.png");  you can remove /public/ */
+  /* height: 150px;
+  width: 108px;
+  background-size: cover;
+  background-position: center center; */
+}
+
+.gamecard img {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  z-index: 10;
+}
+
+.hide-card {
+  background-image: url("/pokemon-back.png");
+  height: 150px;
+  width: 108px;
+  background-size: cover;
+  background-position: center center; 
+  position: relative;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  z-index: 10 !important;
+}
+
+.hide-picture {
+  display: none !important;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.game-end-screen {
+  display: block;
+  font-size: 100px;
+  color: red;
 }
