@@ -20,6 +20,11 @@ function App() {
   const [gameArray, setGameArray] = useState([{}, {}, {}, {}, {}])
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
+
+  // This is good. Can also use for prefetch api call.
+  // useEffect(() => {
+  //   score > highScore ? setHighScore(score) : null ;
+  // }, [gameStatus, score, highScore]);
   
   function checkLocalHighScore() {
     let localScore = JSON.parse(localStorage.getItem("highscore"))
